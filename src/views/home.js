@@ -13,6 +13,8 @@ import "./home.css";
 import Loginsystem from "./login";
 import Share from "./Share";
 import { useAppContext } from "../AppContext";
+import video1 from "../assets/video1.mp4"
+import video2 from "../assets/video2.mp4";
 
 
 const Home = (props) => {
@@ -163,7 +165,7 @@ const Home = (props) => {
       </Helmet>
       <header data-thq="thq-navbar" className="home-navbar">
         <span className="home-logo"><a  href="/">
-              DeCAT
+              Bloom
             </a></span>
         <div
           data-thq="thq-navbar-nav"
@@ -192,8 +194,8 @@ const Home = (props) => {
           </nav>
         </div>
         <div data-thq="thq-navbar-btn-group" className="home-btn-group">
-          
-          <button onClick={checkConnectionBeforeConnecting} className="button wallet-btn">
+        <button className='home-button6 button' onClick={() => Verify()}>Verify Cred</button>
+          <button onClick={checkConnectionBeforeConnecting} className="home-button6 button">
             {connectmsg}
           </button>
         </div>
@@ -211,7 +213,7 @@ const Home = (props) => {
             className="home-nav1"
           >
             <div className="home-container1">
-              <span className="home-logo1">DeCAT</span>
+              <span className="home-logo1">Bloom</span>
               <div data-thq="thq-close-menu" className="home-menu-close">
                 <svg viewBox="0 0 1024 1024" className="home-icon02">
                   <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
@@ -246,7 +248,6 @@ const Home = (props) => {
           </div>
         </div>
       </header>
-      <button className='home-button6 button' onClick={() => Verify()}>Verify Credentials/Proofs</button>
     {verified!==undefined && <ul className="home-cards">
       {verified==true &&
       <div className="home-card">
@@ -263,18 +264,24 @@ const Home = (props) => {
       </div>
       }
       </ul>}
-      
-      {isConnected && <><label className='mint-btn'>Total DeCAT's Minting Volume: {totalmints}
-      </label> <label className='mint-btn'>Total DeCAT's Shared Volume: {total_endorsements}</label><br></br></>}
+
+      <div className="volume-comtainer">
+      {isConnected && <><label className='mint-btn'>Total Bloom's Minting Volume:<br></br><span className="margin-value">{totalmints}</span>
+      </label> <label className='mint-btn'>Total Bloom's Shared Volume: <br></br>
+      <span className="margin-value">{total_endorsements}</span>
+      </label></>}
       {isConnected && admin && <Loginsystem></Loginsystem>}
+      </div>
+
       <section className="home-hero">
-      
-      {!isConnected && <div className="home-heading">
+      {!isConnected && 
+      <div className="home-heading">
           <h1 className="home-header">Store. Share. Succeed</h1>
           <p className="home-caption">
           Decentralized Identity Verification and storage system.
           </p>
         </div>}
+
         <div className="home-buttons">
           {/* <button onClick={checkConnectionBeforeConnecting} className="button">
             {connectmsg}
@@ -283,14 +290,17 @@ const Home = (props) => {
         </div>
       </section>
       <section className="home-description">
+      
+      <div className="volume-comtainer">
       {isConnected && <div className="home-container">
       <p className="caption">
-          Your DeCAT Profile:
+          Your Bloom Profile:
       </p>
-      <label className='home-button7 button'>Total DeCAT Sharings allowed: {endorsementsAllowed}</label>
-        <label className='home-button7 button'>DeCAT SBT's minted to your account
+      <label className='mint-btn'>Total Bloom Sharings allowed:<br></br><span className="margin-value">{endorsementsAllowed}</span></label>
+        <label className='mint-btn'>Bloom SBT's minted to your account
         </label>
-        <ul>{fetched_nftdata && 
+        
+        <ul><span className="margin-value">{fetched_nftdata && 
         nft_data.map((nft, index) => (
         <>
           <div className="home-card" style={{width: 700}} key={index}>
@@ -302,11 +312,14 @@ const Home = (props) => {
           </div>
           </>
         ))}
+        </span>
         </ul>
     </div>}
+    </div>
+    
     
     {isConnected && <div className="home-container">
-      <label className='home-button7 button'>DeCAT SBT's shared to your account
+      <label className='home-button7 button'>Bloom SBT's shared to your account
       </label>
         <ul>{fetched_nftdata && 
         endorsed_mints.map((nft, index) => (
@@ -329,6 +342,30 @@ const Home = (props) => {
         />
         
       </section>
+
+  {/* video section */}
+  <div class="flex-container">
+  <video
+    autoplay
+    loop
+    muted
+    class="video"
+  >
+    <source src={video1} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <video
+    autoplay
+    loop
+    muted
+    class="video"
+  >
+    <source src={video2} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
       {!isConnected && <section className="home-cards">
         <div className="home-row">
           <div className="home-card">
@@ -354,7 +391,7 @@ const Home = (props) => {
             <div className="home-main1">
               <div className="home-content02">
                 <h2 className="home-header02">
-                  DeCAT: Decentralized Identity verification and storage system
+                  Bloom: Decentralized Identity verification and storage system
                 </h2>
                 <p className="home-description03">
                   Ensuring the authenticity and uniqueness of certificates,

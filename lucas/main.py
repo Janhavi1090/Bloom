@@ -110,7 +110,7 @@ async def startup_event():
 @app.get("/")
 async def home(id: str):
     val = await contractwithsigner.functions.getTotalMints().call()
-    logger.info(f"Total DeCAT Volume: {val}")
+    logger.info(f"Total Bloom Volume: {val}")
     tokenIds = await contractwithsigner.functions.getTokenIdAccount(id).call()
     ans = []
     for tokenId in tokenIds:

@@ -163,7 +163,7 @@ const Portfolio = () => {
       </Helmet>
       <header data-thq="thq-navbar" className="home-navbar">
       <span className="home-logo"><a  href="/">
-              DeCAT
+              Bloom
             </a></span>
         <div
           data-thq="thq-navbar-nav"
@@ -206,7 +206,7 @@ const Portfolio = () => {
             className="home-nav1"
           >
             <div className="home-container1">
-              <span className="home-logo1">DeCAT</span>
+              <span className="home-logo1">Bloom</span>
               <div data-thq="thq-close-menu" className="home-menu-close">
                 <svg viewBox="0 0 1024 1024" className="home-icon02">
                   <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
@@ -241,14 +241,15 @@ const Portfolio = () => {
           </div>
         </div>
       </header>
-      <div className="home-hero">
-      <label className='home-button7 button'>Total DeCAT NFT's Minted to your account: {address_mints}<br></br>
-      Total DeCAT NFT's Shared to your wallet: {total_endorsed_mints}
-      </label>
-      </div>
-      <label className='home-button7 button'>Total NFT's Received from DeCAT ORG: {address_mints}
+      <div className="portfolio-main-section-container">
+      <label className='portfolio-container-main'>Total Bloom NFT's Minted to your account:<br></br> <span className="span-portfolio-container-main">{address_mints}</span><br></br><br></br>
+      Total Bloom NFT's Shared to your wallet: <br></br><span className="span-portfolio-container-main">{total_endorsed_mints}</span>
       </label>
       
+      <br></br>
+      <label className='portfolio-container'>Total NFT's Received from Bloom ORG: <span className="span-portfolio-container-main">{address_mints}</span>
+      </label>
+      </div>
     <div class="home-container">
       {qrcodegenerated && 
       <div className="home-card" style={{width: 700}}>
@@ -261,7 +262,7 @@ const Portfolio = () => {
     <form onSubmit={getNFT}>
       <div className="home-container" style={{width: 300}}>
         <label className='home-links' style={{color: "white"}}>Enter Wallet Address</label>
-         <input type="text" id="walletaddress" style={{width: 300}} className="button" required></input>
+         <input type="text" id="walletaddress" style={{width: 300}} className="input-home-container" required></input>
         
          <button type="submit" className='home-button6 button'>Get NFT</button>
       </div>
@@ -279,7 +280,7 @@ const Portfolio = () => {
           <br></br>
           </div>
         </ul>}
-    <label className='home-button7 button'>DeCAT SBT's minted to your account
+    <label className='home-button7 button'>Bloom SBT's minted to your account
     </label>
         <ul className="flex-container">{fetched_nftdata && 
         nft_data.map((nft, index) => (
@@ -298,7 +299,7 @@ const Portfolio = () => {
     </div>
 
     <div className="home-container">
-    <label className='home-button7 button'>DeCAT SBT's shared to your account
+    <label className='home-button7 button'>Bloom SBT's shared to your account
       </label>
         <ul className="flex-container">{fetched_nftdata && 
         endorsed_mints.map((nft,index) => (

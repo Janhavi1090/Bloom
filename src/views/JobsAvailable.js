@@ -129,7 +129,7 @@ const JobsAvailable = (props) => {
       </Helmet>
       <header data-thq="thq-navbar" className="home-navbar">
         <span className="home-logo"><a  href="/">
-              DeCAT
+              Bloom
             </a></span>
         <div
           data-thq="thq-navbar-nav"
@@ -176,7 +176,7 @@ const JobsAvailable = (props) => {
             className="home-nav1"
           >
             <div className="home-container1">
-              <span className="home-logo1">DeCAT</span>
+              <span className="home-logo1">Bloom</span>
               <div data-thq="thq-close-menu" className="home-menu-close">
                 <svg viewBox="0 0 1024 1024" className="home-icon02">
                   <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
@@ -217,7 +217,7 @@ const JobsAvailable = (props) => {
         <h1 className="home-header">Please connect Wallet.</h1>
         </div>}
       </section>
-      {isConnected && <label className='mint-btn button'>Total DeCAT's Volume: {totalmints}
+      {isConnected && <label className='mint-btn button'>Total Bloom's Volume: {totalmints}
       </label>}
       {/* {isConnected && <label className='home-button7 button'>Total SBT's shared to your Account: {curr_endorsements_received} <br></br>
       Total SBT's shared by you: {curr_endorsements_given} <br></br>
@@ -397,7 +397,7 @@ const JobsAvailable = (props) => {
             <div className="home-heading10">
               <h2 className="home-logo2">ZKBuilders</h2>
               <p className="home-caption17">
-              Empower your professional journey with Decat. Join us in creating a job market where trust is inherent, and your identity is truly yours. Let's build a decentralized future together.
+              Empower your professional journey with Bloom. Join us in creating a job market where trust is inherent, and your identity is truly yours. Let's build a decentralized future together.
               </p>
             </div>
             <div className="home-socials1">

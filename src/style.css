@@ -38,7 +38,8 @@
 .button {
   color: var(--dl-color-gray-black);
   cursor: pointer;
-  display: inline-block;
+  display: center;
+  margin: auto;
   padding: 0.5rem 1rem;
   font-size: 20px;
   box-shadow: 5px 6px 0px 0px #000000;
@@ -52,7 +53,10 @@
   border-radius: 0px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: #00ffbd;
+  background-color: orange;
+  
+  border-radius: 12px;
+  /* border: 2px solid rgb(235, 101, 5); */
 }
 
 .button:hover {

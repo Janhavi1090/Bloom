@@ -14,7 +14,7 @@ import "./Set.sol";
 * @author Dhananjay Pai
 * @notice Soul Bound Token
 */
-contract DeCAT is ERC721, ERC721URIStorage {
+contract Bloom is ERC721, ERC721URIStorage {
     mapping(address => string) public creds; // whitelisting 
     uint256 public total_mints; // total mints from this smart contract
     mapping(address => uint256) public total_sbt_received_from_org; // total SBT's recieved in the user account from authorized user
@@ -33,7 +33,7 @@ contract DeCAT is ERC721, ERC721URIStorage {
     event MultipleMinted(address[] _to, string[] _uri); // Bulk transaction using multibatch transaction
     event EndorsedMint(address _from, address _to, string _uri); // Event after SBT has been endorsed
 
-    constructor() ERC721("DeCAT", "DCAT") {
+    constructor() ERC721("Bloom", "DCAT") {
         creds[0xdC737Bc0B2174a5d4A8CA7b588905c7770C671ee] = "123";
         creds[0x5B38Da6a701c568545dCfcB03FcB875f56beddC4] = "456";
         creds[0x6A475ED41c9A172332DBa2308e5D6D059F650E12] = "son";
