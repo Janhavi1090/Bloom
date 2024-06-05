@@ -3,13 +3,14 @@ import React from "react";
 import Script from "dangerous-html/react";
 import { Helmet } from "react-helmet";
 import { useState, useEffect } from "react";
-import abi from "../contracts/Autocrate.json";
+import abi from "../contracts/Bloom.json";
 //import './App.css';
 import { ethers } from "ethers";
 import axios from "axios";
 import { Bar, Line, Pie, Doughnut } from "react-chartjs-2"; 
 import "./home.css";
 import { useAppContext } from "../AppContext";
+import { AInews } from '@chaingpt/ainews';
 
 const JobsAvailable = (props) => {
   const { state, setState } = useAppContext()
@@ -35,6 +36,8 @@ const JobsAvailable = (props) => {
     account,
     score: reputation_score[index],}))
     leaderboardData.sort((a, b) => b.score - a.score);
+
+    
   
 
 //   const nftipfsAddress = "https://gateway.lighthouse.storage/ipfs/";
@@ -44,6 +47,30 @@ const JobsAvailable = (props) => {
     if(!isConnected){
       connectWallet();
     }
+  }
+  const [news, setNews] = useState("");
+  const ainews = new AInews({
+    apiKey: process.env.API_KEY,
+  });
+  async function getNews() {
+    const response = await ainews.getNews({
+      fetchAfter: new Date('2020-02-03'), 
+      categoryId: [69], 
+      subCategoryId: [20], 
+      searchQuery: "Technology skills", 
+      limit: 10,
+      offset: 0,
+      tokenId: [91], 
+      sortBy: 'createdAt',
+    }).then((res) => {
+      console.log(res)
+    }).catch((err) => {
+      if (err instanceof nErrors.AINewsError) {
+        console.log(err.message);
+      }
+    });
+    console.log(response.data.rows);
+    setNews(response.data.rows);
   }
 
   const ChatwithData = async(event) => {
